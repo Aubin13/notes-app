@@ -1,29 +1,97 @@
-*{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.container{
+body {
+  background-color: rgb(248, 235, 200);
+  color: #2c2c2b;
+}
+
+.container {
+  display: flex;
+}
+
+.sidebar {
+  height: 100vh;
+  width: 20vw;
+  border-right: 1px solid rgb(194, 192, 192);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+  overflow-y: scroll;
+}
+
+.sidebar h2 {
+  font-size: 28px;
+}
+.sidebar-title {
+  padding: 0px 10px 0 10px;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-.sidebar{
-  height: 100vh;
-  width: 30vw;
-  border-right: 1px solid grey;
+.sidebar button {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+.sidebar-title button {
+  color: #3598e9;
+}
+.notes {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px 5px 10px;
+  border-top: solid 1px #d4cfbb;
+  cursor: pointer;
+  transition: 0.2s ease-in-out all;
+
 }
 
-.notes{
-  padding: 5px 20px 10px;
-  background-color: #28f;
+.notes button {
+  color: rgb(233, 57, 57);
+  font-size: 14px;
 }
 
-.notes > p{
+.notes p {
+  margin-top: -10px;
+  font-size: 14px;
+}
+
+.notes:hover {
+  background-color: #f5e4b0;
+}
+
+.notes h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.active-note {
+  background-color: #f7db87;
+  transition: 0.1s ease-in-out;
+}
+.active-note:hover {
+  background-color: #f7db87;
+  transition: 0.1s ease-in-out;
+}
+.no-active-note{
+  font-size: 20px;
+  padding: 20px;
+}
+
+.notes > p {
   margin-top: -20px;
   font-size: small;
 }
 
-.notes-title{
+.notes-title {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -33,34 +101,75 @@
   color: #c33;
 }
 
-form{
-  padding: 20px 5px;
+.mainbar{
+  position: static;
 }
 
-#note-title{
-  width: 30vw;
+form {
+  padding: 5px;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+#note-title {
+  padding: 5px;
+  color: #2c2c2b;
+  width: 70vw;
+  background-color: transparent;
   font-size: 20px;
   font-weight: bold;
-  border: none;
-  transition: 3s ease;
+  border: solid 2px transparent;
+  transition: 0.3s ease-in-out all;
+  border-radius: 10px;
 }
 
-#note-title:focus{
-  border: 2px gray;
-  border-radius: 4px;
-  transition: 3s ease;
+#note-title:focus {
+  border: solid 2px #a39f92;
+  transition: 0.3s ease-in-out all;
+  outline: 0;
 }
 
-#note-content{
-  margin-top: 20px;
+#note-content {
+  padding: 5px;
+  color: #2c2c2b;
+  resize: none;
   width: 70vw;
-  font-size: 15px;
+  margin-top: 20px;
+  font-size: 16px;
+  background-color: transparent;
   border: none;
-  transition: 3s ease;
+  border: solid 2px transparent;
+  border-radius: 10px;
+  outline: 0;
+  transition: 0.3s ease-in-out cubic-bezier(0.075, 0.82, 0.165, 1) all;
 }
 
-#note-content:focus{
-  border: 2px gray;
-  border-radius: 4px;
-  transition: 3s ease;
+#note-content:focus {
+  border: solid 2px #a39f92;
+  height: 70vh;
+  transition: 0.3s ease-out all;
+}
+/* Scrollbarrr */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #42381830; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eeca56; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #9c8539; 
 }
